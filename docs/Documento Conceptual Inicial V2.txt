@@ -1,0 +1,190 @@
+===== COMPRENSIÓN DEL NEGOCIO Y PROBLEMA DEL NEGOCIO =======
+
+Datos con ventas, inventarios y comportamiento de los clientes.
+
+Recolecto datos históricos relacionados con ventas e inventarios de productos distribuidos a diferentes clientes,
+
+NO se están aprovechando los datos completamente.
+
+Importancia de la predicción el anticipar demanda o reducción de ventas para tomar medidas.
+
+Mejorar el uso de la información disponible.
+
+- análisis para comprender mejor el comportamiento de datos y ver la posibilidad de anticipar el comportamiento futuro de los indicadores clave del negocio.
+
+Gran cantidad de datos sobre inventario y ventas de productos y clientes.
+
+NO se esta usando para predecir lo que puede ocurrir ni apoyar en las decisiones operativas y comerciales. (tienen buena cantidad de datos).
+
+Analizar lo datos. Patrones
+
+Predicciones con un nivel razonable de precisión.
+
+PROBLEMA DEL NEGOCIO: Actualmente la empresa tiene datos históricos, pero no cuenta con herramientas analíticas predictivas, lo que limita la planeación, el inventario, el abastecimiento y las decisiones comerciales. La ausencia de modelos analíticos dificulta anticipar fluctuaciones en la demanda y errores de estimación.
+
+
+===== OBJETIVO ESTRATÉGICOS =======
+
+
+REDUCIR EL ERROR EN LA ESTIMACIÓN DE VENTAS FUTURAS
+
+MEJORAR LA CAPACIDAD DE ANTICIPAR CAMBIOS EN LA DEMANDA DE PRODUCTOS
+
+Los principales indicadores que se desean analizar o predecir son:
+
+• Ventas FUTURAS por producto y cliente
+• Estimar el volumen de ventas ESPERADO en próximos periodos a partir del
+comportamiento histórico. (En este punto pueden escoger cual será el periodo que
+analizaran, mensual, anual, etc)
+• Identificar qué productos podrían presentar mayor o menor DEMANDA en el futuro.
+• Detectar situaciones en las que los niveles de inventario podrían NO SER SUFICIENTES
+para cubrir la demanda estimada.
+• Los resultados del análisis deberán comunicarse mediante visualizaciones claras y
+un dashboard interactivo que permita interpretar fácilmente los datos. (opcional)
+
+====================== OBJETIVOS ANALÍTICOS =======================
+
+• Analizar las fluctuaciones en las ventas por cada producto según las temporadas cada año.
+
+• Analizar la relación entre la temporalidad y el comportamiento de ventas de los productos.
+
+• Identificar patrones temporales, anomalías y comportamientos en las ventas.
+
+• Usar medidas de tendencia central y correlación para explorar la relación entre la temporalidad de las ventas de cada producto.
+
+• Considerar los factores que puedan ser determinantes en la disminución de la demanda de ciertos productos.
+
+• Predecir las ventas futuras y sus tendencias.
+
+• Detectar riesgos de desabastecimiento de ciertos productos y en que época puede producirse.
+
+
+
+==============================KPIs=============================
+NEGOCIO
+- Volumen total de ventas por periodo.
+- Variación porcentual de ventas.
+- Productos con mayor demanda
+- Productos con menor rotación
+- Nivel promedio de inventario
+- Frecuencia de quiebre de stock
+- Crecimiento/disminución de demanda
+- Clientes con mayor volumen de compra
+- Tendencia semanal/mensual de ventas
+
+ANALÍTICOS
+-Correlación ventas-inventario
+- Tendencia de crecimiento
+- Estacionalidad
+- Variabilidad de demanda
+- Segmentación de clientes
+- Segmentación de productos
+
+MODELO ML
+-R²
+-MAE
+-RMSE
+
+-Accuracy
+-Recall
+-Precision
+-F1-SCore
+
+
+==========================Stakeholders===========================
+
+Directivos de la empresa
+
+Departamento de ventas de la empresa
+
+Departamento de producción de la empresa
+
+Área presupuestal y operativa de la empresa
+
+
+========================= HIPOTESIS========================
+
+1. Existe una temporalidad en la demanda de ciertos productos a lo largo del año
+
+2. El comportamiento de los datos históricos permiten identificar patrones predictivos de demandas futuras.
+
+3. Algunos productos presentan una mayor rotación en periodos específicos del año.
+
+4. Los niveles de inventario no siempre se ajustan proporcionalmente al incremento de la demanda en el transcurso del tiempo.
+
+5. Existen diferencias significativas en el comportamiento de compras entre distintos clientes y canales.
+
+6. El volumen de ventas presenta variaciones temporales que podrían anticiparse mediante modelos predictivos.
+
+7. Algunos productos presentan tendencias de aumento y disminución en ventas.
+
+8. La demanda histórica puede utilizarse para prever posibles riesgos de desabastecimiento.
+
+9. Los clientes con mayor frecuencia de compra presentan patrones de consumo diferenciados.
+
+10. Las variables temporales (semanas, periodos, años) influyen significativamente en el comportamiento de ventas.
+
+
+================================== DATASET ====================
+
+• ventas de productos
+• niveles de inventario
+• comportamiento de compra de clientes
+• información de productos
+• registros históricos de operaciones
+• El conjunto de datos tendrá aproximadamente 100.000 registros, con variables
+asociadas a clientes, productos, fechas, ventas e inventarios.
+• Los datos estarán anonimizados para garantizar la privacidad de la información.
+
+
+Channel = Cliente
+
+Material Description = Producto
+
+Category: Sell in = Despacho a los clientes.      Clust. Sales = Venta de los clientes del producto.        Channel Inv. Inventario
+
+
+Cliente: Categórico Nominal.
+Material: Categórico 
+
+
+CHANNEL: Tipo texto, hace referencia al cliente, entidad o canal que esta realizando la compra de los productos.
+
+MATERIAL DESCRIPTION: Tipo texto, es el tipo de material o producto que se esta comprando.
+
+CATEGORY: Tipo texto, se refiere a la categoria en que se encuentra la compra. Sell in, Cust. Saves y Channel Inv.
+
+202XN: (X = 3 al 5) ( N = 01 al 52) Tipo Numérico. Representa la cantidad de unidades vendidas en cada semana del año.
+
+CABE ACLARAR QUE HAY 3 DATASETS, SE DIFERENCIAN EN QUE CADA UNO ABARCA UN AÑO, DESDE EL 2023 HASTA EL 2025.
+
+
+Ejemplo de fila:
+
+CUSTOMER1	MOBILE,SM-A032M/DS,BLACK,LTC	Sell-in	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+
+
+
+
+Predicción de ventas/demanda
+
+con:
+
+XGBoost,
+Random Forest,
+regresión,
+o forecasting ligero.
+Y complementar con:
+Clustering
+
+de:
+
+clientes,
+productos,
+demanda.
+
+Eso encaja PERFECTO con las temáticas del curso.
+
+
+
+
