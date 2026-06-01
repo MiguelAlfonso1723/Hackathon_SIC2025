@@ -101,13 +101,14 @@ Se identificaron:
 ## 📁 Estructura del proyecto
 
 📦 proyecto-analitica-predictiva
-├── data/
+├── data/\
+│ └── 2023.csv
+│ └── 2024.csv
+│ └── 2025.csv
+│ └── dataset_transformado.csv
 │ └── dataset_final.csv
 ├── notebooks/
 │ └── modelado_predictivo.ipynb
-├── src/
-│ ├── preprocessing.py
-│ ├── modeling.py
 ├── outputs/
 │ └── graficas/
 ├── README.md
