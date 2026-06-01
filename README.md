@@ -101,6 +101,8 @@ Se identificaron:
 ## 📁 Estructura del proyecto
 
 📦 proyecto-analitica-predictiva
+
+
 ├── data/\
 
 │ └── 2023.csv
