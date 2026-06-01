@@ -102,15 +102,25 @@ Se identificaron:
 
 📦 proyecto-analitica-predictiva
 ├── data/\
+
 │ └── 2023.csv
+
 │ └── 2024.csv
+
 │ └── 2025.csv
+
 │ └── dataset_transformado.csv
+
 │ └── dataset_final.csv
+
 ├── notebooks/
+
 │ └── modelado_predictivo.ipynb
+
 ├── outputs/
+
 │ └── graficas/
+
 ├── README.md
 
 
